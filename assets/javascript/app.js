@@ -12,7 +12,6 @@ initialScreen();
 
 $("body").on("click", ".start-button", function(event){
 	event.preventDefault();  // added line to test issue on GitHub Viewer
-	clickSound.play();
 	generateHTML();
 
 	timerWrapper();
@@ -21,7 +20,6 @@ $("body").on("click", ".start-button", function(event){
 
 $("body").on("click", ".answer", function(event){
 	//answeredQuestion = true;
-	clickSound.play();
 	selectedAnswer = $(this).text();
 	if(selectedAnswer === correctAnswers[questionCounter]) {
 		//alert("correct");
@@ -37,7 +35,6 @@ $("body").on("click", ".answer", function(event){
 }); // Close .answer click
 
 $("body").on("click", ".reset-button", function(event){
-	clickSound.play();
 	resetGame();
 }); // Closes reset-button click
 
@@ -122,4 +119,3 @@ var theClock;
 var correctTally = 0;
 var incorrectTally = 0;
 var unansweredTally = 0;
-var clickSound = new Audio("sound/button-click.mp3");
